@@ -7,7 +7,6 @@ public class Main {
     public static void main(String[] args) {
         Voiture A = new Voiture();
         A.Voiture("test",20);
-        A.R
     }
 
     private static void Convert(){
