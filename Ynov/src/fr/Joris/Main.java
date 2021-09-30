@@ -3,42 +3,41 @@ package fr.Joris;
 import java.util.Scanner;
 
 public class Main {
+    private static Car A;
 
-    public static void main(String[] args) {
-        Voiture A = new Voiture();
-        A.Voiture("test",20);
+    public static void main() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Brand: ");
+        String brand = sc.nextLine();
+
+        System.out.print("Color: ");
+        String color = sc.nextLine();
+
+        System.out.print("Diameter(float): ");
+        float diameter = sc.nextFloat();
+
+
+        System.out.print("Speed(float): ");
+        float speed = sc.nextFloat();
+
+        A = new Car();
+        A.Car(brand,color,diameter,speed);
     }
 
-    private static void Convert(){
-        Scanner temp = new Scanner(System.in);
-
-        System.out.println("Convert: ");
-        System.out.println("F : F -> C");
-        System.out.println("C : C ->  F");
-
-        System.out.print("Choix: ");
-        String rep = temp.nextLine();
-
-        switch (rep) {
-            case "F" -> {
-                System.out.print("Temp: ");
-                int respF = temp.nextInt();
-                FtoC(respF);
-            }
-            case "C" -> {
-                System.out.print("Temp: ");
-                int respC = temp.nextInt();
-                CtoF(respC);
-            }
+    public static void getInfo(){
+        if (A == null){
+            System.out.println("No car.Build one");
+            return;
         }
+        A.getAllInfo();
     }
 
-    private static void FtoC(int temp){
-        int C = ((temp - 32)*5) / 9;
-        System.out.print("C: "+C);
-    }
-    private static void CtoF(int temp){
-        int F = (9/5) * temp + 32;
-        System.out.print("C: "+F);
+    public static void getInfoWheel(){
+        if (A == null){
+            System.out.println("No car.Build one");
+            return;
+        }
+        A.getAllInfoRoue();
     }
 }
